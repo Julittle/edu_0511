@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        double sum;
+        double percent;
+        double profit;
+        int period=5;
+        System.out.println("Сумма вклада: ");
+        sum = scan.nextDouble();
+        System.out.println("Введите годовой процент: ");
+        percent = scan.nextDouble();
+             for (int a=1; a<=5; a++) {
+                 profit = (sum*percent/100);
+                 profit += sum;
+                System.out.println("Сумма за " +a+ " год хранения: " +profit);
+            }
+    }
+}
