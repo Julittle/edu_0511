@@ -5,15 +5,15 @@ public class Main {
         double sum;
         double percent;
         double profit;
-        int period=5;
         System.out.println("Сумма вклада: ");
         sum = scan.nextDouble();
         System.out.println("Введите годовой процент: ");
         percent = scan.nextDouble();
-             for (int a=1; a<=5; a++) {
-                 profit = (sum*percent/100);
-                 profit += sum;
-                System.out.println("Сумма за " +a+ " год хранения: " +profit);
-            }
+        percent = percent/100;
+        for (int a=1; a<=5; a++) {
+            profit = sum*percent;
+            sum += profit;
+            System.out.printf("Сумма за %d год хранения: %.2f\n",a,sum,profit);
+        }
     }
 }
