@@ -1,0 +1,15 @@
+public class Main {
+    public static void main(String[] args) {
+        int a=31;
+
+        for(int b=2; b<a; b++){
+            int c=a%b;{
+            if(c==0)
+                System.out.printf("Верно: %d делится на %d\n",a,b);
+                else
+                System.out.printf("Неверно: %d не делится на %d\n",a,b);
+                return;
+            }
+        }
+    }
+}
