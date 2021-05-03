@@ -1,0 +1,12 @@
+public class Main {
+    public static void main(String[] args) {
+        int a  = 10;
+        int b  = 8;
+        int c = a/b;
+        int d = a%b;
+        if(d==0)
+            System.out.printf("Делится: %d\n",c);
+        else
+            System.out.printf("Делится с остатком %d. Остаток от деления %d\n",c,d);
+    }
+}
