@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите число: ");
+        int a = in.nextInt();
+        System.out.printf("Ваше число %d \n",a);
+        in.close();
+                if (a==10)
+                System.out.printf("Верно");
+                else
+                System.out.printf("Неверно");
+    }
+}
