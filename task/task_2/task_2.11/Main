@@ -1,11 +1,15 @@
-public class Main{
-    public static void main(String[] args){
+public class Main {
+    public static void main(String[] args) {
         int[] array = {2, 3, 5, 1};
-        int s=0;
-        for (int element:array)
-            s += element;
-            {
-                System.out.println(s);
+        int s = 0;
+        for (int elem : array)
+            s += elem;
+        for (int i = 0; i < array.length; i++) {
+            s += array[i];
+            if (s > 10) {
+                System.out.println("Сложить " + (i - 1) + " элемента");
+                break;
             }
+        }
     }
 }
