@@ -1,0 +1,11 @@
+public class Main{
+    public static void main(String[] args){
+        int[] array = {2, 3, 5, 1};
+        int s=0;
+        for (int element:array)
+            s += element;
+            {
+                System.out.println(s);
+            }
+    }
+}
