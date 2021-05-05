@@ -1,0 +1,13 @@
+public class Main {
+    public static void fun_recur(int[] arr, int a){
+        if(a >= arr.length) return;
+        System.out.printf("%d ", arr[a]);
+        fun_recur(arr, a+1);
+    }
+    public static void main(String[] args) {
+        int num[] = {4,2,6,2,65};
+        fun_recur(num, 0);
+        System.out.println();
+    }
+
+}
