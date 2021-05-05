@@ -1,0 +1,13 @@
+public class Main{
+    static boolean function(int a, int b){
+        if (a == b) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    public static void main(String[] args){
+        System.out.println( function(7, 3) );
+    }
+}
