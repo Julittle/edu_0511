@@ -1,0 +1,50 @@
+public abstract class Animal {
+    private String order; // отряд непарнокопытные
+    private String family; // семейство лошадиные
+    private String horse_type; // вид лошади
+    private String nutrition; //питание
+
+    public Animal(String or, String fam, String ht, String nut) {
+        this.order = or;
+        this.family = fam;
+        this.horse_type = ht;
+        this.nutrition = nut; }
+
+    public abstract void run();
+    
+    public static void main(String[] args) {
+        Animal horse = new Horse("Непарнокопытные", "Лошадиные", "Лошадь", "Травоядные", "Скачет");
+        horse.run();
+        Horse pegasus = new Pegasus("Непарнокопытные", "Лошадиные", "Лошадь", "Травоядные", "Летит", "Миф");
+        pegasus.fly();
+    }
+}
+
+class Horse extends Animal {
+    private String movement; //движение
+
+    public Horse(String or, String fam, String ht, String nut, String mov) {
+        super(or, fam, ht, nut);
+        this.movement = mov;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Игого, я поскакал(а)");}
+
+    public void fly(){
+        System.out.println("Летим?");}
+}
+
+class Pegasus extends Horse {
+    private String existences; //существование (миф/реальность)
+
+    public Pegasus(String or, String fam, String ht, String nut, String mov, String exis) {
+        super(or, fam, ht, nut, mov);
+        this.existences = exis;
+    }
+
+    @Override
+    public void fly() {
+        System.out.println("Игого, я полетел(а)");}
+}
