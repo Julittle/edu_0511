@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Collections;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Путь к файлу: ");
+        String filename = scan.nextLine();
+        scan.close();
+
+        ArrayList<Integer> number = new ArrayList<>();
+        try {
+            File file = new File(filename);
+            Scanner open = new Scanner(file);
+            while (open.hasNextLine()) {
+                Integer line = open.nextInt();
+                number.add(line);
+            }
+            open.close();
+        } catch (FileNotFoundException n){
+            n.printStackTrace();
+        }
+
+        ArrayList<Integer> summary = new ArrayList<>();
+        for (Integer item : number) {
+            if(item%2==0)
+                summary.add(item);
+        };
+        Collections.sort(summary);
+        System.out.println("Исходник: "+number);
+        System.out.println("Результат: "+summary);
+    }
+}
