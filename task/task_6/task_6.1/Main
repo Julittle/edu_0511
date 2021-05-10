@@ -1,5 +1,4 @@
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.io.InputStream;
@@ -8,6 +7,11 @@ import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.URL;
 import java.net.URLConnection;
+
+/*
+ * task_6.1 - реализовать многопоточность в прокси чеккере первым способом
+ * task_6.2 - реализовать многопоточность в прокси чеккере вторым способом
+  *  */
 
 public class Main {
     public static final String ANSI_RESET = "\u001B[0m";
@@ -18,10 +22,8 @@ public class Main {
     public static void main(String[] args) {
         try {
             FileInputStream fin = new FileInputStream("C:\\Users\\Юлия\\Desktop\\java\\ip.txt");
-            FileOutputStream fout = new FileOutputStream("C:\\Users\\Юлия\\Desktop\\java\\good.txt");
             int i;
             String proxy = "";
-            System.out.println("Файл открыт");
             while ((i = fin.read()) != -1) {
                 if (i == 13) continue;
                 else if (i == 10) {
@@ -30,20 +32,11 @@ public class Main {
                     Thread thread = new Thread(new Runnable() {
                         @Override
                         public void run() {
-                           try {
-                                if (checkProxy(ip, Integer.parseInt(port))) {
-                                    //в консоль
+                           if (checkProxy(ip, Integer.parseInt(port))) {
                                     System.out.println("IP: "+ip+":"+port+ANSI_GREEN+" работает"+ANSI_RESET);
-                                    //в файл
-                                    String s = "IP: "+ip+":"+port+" работает"+"\r\n";
-                                    fout.write(s.getBytes(StandardCharsets.UTF_8));
-                                }else{
+                                    }else{
                                     System.out.println("IP: "+ip+":"+port+ANSI_RED+" не работает"+ANSI_RESET);}
-                            }catch (
-                                    IOException e){
-                                e.printStackTrace();
                             }
-                       }
                     });
                     thread.start();
                     proxy = "";
@@ -54,7 +47,7 @@ public class Main {
                 }
             }
 
-        } catch (IOException e) {
+        }catch (IOException e) {
             e.printStackTrace();
         }
     }
