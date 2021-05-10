@@ -5,13 +5,11 @@ public class Main {
         List<Integer> collection = new ArrayList<>(
                 List.of(9, 48, 2, 1, 4, 50, 8, 26, -10)
         );
-
         List<Integer> summary = new ArrayList<>();
         for (Integer elem : collection) {
             if(elem>0 && elem<10)
                 summary.add(elem);
         };
-
         System.out.println("Коллекция: " + collection);
         System.out.println("Числа больше 0, но меньше 10: " + summary);
     }
