@@ -7,7 +7,6 @@ import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.URL;
 import java.net.URLConnection;
-
 /*
  * task_6.1 - реализовать многопоточность в прокси чеккере первым способом
  * task_6.2 - реализовать многопоточность в прокси чеккере вторым способом
