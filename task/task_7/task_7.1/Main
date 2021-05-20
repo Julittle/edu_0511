@@ -8,7 +8,6 @@ import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.URL;
 import java.net.URLConnection;
-
 /*
   * task_6.2 - рабочие ip адреса необходимо складывать в файл good.txt
  *  */
